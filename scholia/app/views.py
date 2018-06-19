@@ -385,6 +385,41 @@ def show_catalogue_empty():
     return render_template('catalogue_empty.html')
 
 
+
+
+@main.route('/cellline/' + q_pattern)
+def show_cellline(q):
+    """Return rendered HTML page for specific cell line.
+
+    Parameters
+    ----------
+    q : str
+        Wikidata item identifier.
+
+    Returns
+    -------
+    html : str
+        Rendered HTML page.
+
+    """
+    return render_template('cellline.html', q=q)
+
+
+@main.route('/cellline/')
+def show_cellline_empty():
+    """Return rendered HTML index page for cell line.
+
+    Returns
+    -------
+    html : str
+        Rendered HTML index page for cell line.
+
+    """
+    return render_template('cellline_empty.html')
+
+
+
+
 @main.route('/country/')
 def show_country_empty():
     """Return country index page.
