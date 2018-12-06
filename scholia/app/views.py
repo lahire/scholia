@@ -1186,6 +1186,25 @@ def show_chemical(q):
         third_parties_enabled=current_app.third_parties_enabled)
 
 
+@main.route('/food/' + q_pattern)
+def show_food(q):
+    """Return html render page for specific food.
+
+    Parameters
+    ----------
+    q : str
+        Wikidata item identifier.
+
+    Returns
+    -------
+    html : str
+        Rendered HTML.
+
+    """
+    entities = wb_get_entities([q])
+    return render_template('food.html', q=q)
+
+
 @main.route('/chemical/')
 def show_chemical_empty():
     """Return rendered HTML index page for chemical.

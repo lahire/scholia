@@ -549,6 +549,10 @@ def q_to_class(q):
     ]):
         class_ = 'project'
     elif set(classes).intersection([
+            'Q2095',  # food
+    ]):
+        class_ = 'food'
+    elif set(classes).intersection([
             'Q7187',  # gene
     ]):
         class_ = 'gene'
@@ -667,6 +671,10 @@ def q_to_class(q):
                 'Q79529',  # chemical substance
                 ]):
             class_ = 'chemical_class'
+        elif set(parents).intersection([
+                'Q2095',  # food
+                ]):
+            class_ = 'food'
         else:
             class_ = 'topic'
 
