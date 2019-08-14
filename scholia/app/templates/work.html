@@ -135,11 +135,11 @@ ORDER BY DESC(?itemLabel)
 `;
 
  $(document).ready(function() {
-     sparqlToDataTable(listOfAuthorsSparql, "#list-of-authors");
-     sparqlToDataTable(relatedWorksSparql, "#related-works");
-     sparqlToDataTable(citationsToTheWorkSparql, "#citations-to-the-work");
-     sparqlToDataTable(citedWorksSparql, "#cited-works");
-     sparqlToDataTable(statementsSparql, "#statements");
+     sparqlToDataTableOnEndPoint("{{ sparqlep }}", listOfAuthorsSparql, "#list-of-authors");
+     sparqlToDataTableOnEndPoint("{{ sparqlep }}", relatedWorksSparql, "#related-works");
+     sparqlToDataTableOnEndPoint("{{ sparqlep }}", citationsToTheWorkSparql, "#citations-to-the-work");
+     sparqlToDataTableOnEndPoint("{{ sparqlep }}", citedWorksSparql, "#cited-works");
+     sparqlToDataTableOnEndPoint("{{ sparqlep }}", statementsSparql, "#statements");
  });
 </script>
 

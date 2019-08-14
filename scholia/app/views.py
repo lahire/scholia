@@ -69,6 +69,8 @@ P_PATTERN = re.compile(r'P[1-9]\d*')
 # Wikidata item identifiers matcher
 qs_pattern = r'<regex(r"Q[1-9]\d*(?:[^0-9]+Q[1-9]\d*)*"):qs>'
 
+SPARQLEP = 'https://query.wikidata.org/sparql'
+
 
 @main.route("/")
 def index():
@@ -1710,7 +1712,7 @@ def show_work(q):
         Rendered HTML page for specific work.
 
     """
-    return render_template('work.html', q=q)
+    return render_template('work.html', q=q, sparqlep=SPARQLEP)
 
 
 @main.route('/work/')
