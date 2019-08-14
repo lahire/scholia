@@ -32,6 +32,7 @@ ORDER BY ?order
  relatedWorksSparql = `
 #defaultView:Table
 # List of related works by co-citation analysis
+PREFIX bd: <http://www.bigdata.com/rdf#>
 SELECT ?count ?work ?workLabel
 WITH {
   SELECT ?work (COUNT(?work) AS ?count)
@@ -53,6 +54,7 @@ ORDER BY DESC(?count)
  citationsToTheWorkSparql = `
 #defaultView:Table
 # List of works that is cited by the specified work
+PREFIX bd: <http://www.bigdata.com/rdf#>
 SELECT ?citations ?publication_date ?citing_work ?citing_workLabel 
 WITH {
   SELECT (MIN(?date) AS ?publication_date) (COUNT(?citing_citing_work) AS ?citations) ?citing_work 
@@ -87,6 +89,7 @@ ORDER BY DESC(?citations) DESC(?publication_date)
  citedWorksSparql = `
 #defaultView:Table
 # List of works that is cited by the specified work
+PREFIX bd: <http://www.bigdata.com/rdf#>
 SELECT ?citations ?publication_date ?cited_work ?cited_workLabel 
 WITH {
   SELECT (MIN(?date) AS ?publication_date) (COUNT(?citing_cited_work) AS ?citations) ?cited_work 
@@ -110,6 +113,7 @@ ORDER BY DESC(?citations) DESC(?date)
  statementsSparql = `
 #defaultView:Table
 # Statements referencing this article
+PREFIX bd: <http://www.bigdata.com/rdf#>
 SELECT ?item ?itemLabel ?property ?propertyLabel ?value ?valueLabel 
 WITH {
   SELECT ?statement WHERE { 
