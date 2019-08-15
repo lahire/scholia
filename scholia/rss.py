@@ -62,6 +62,7 @@ WORK_ITEM_RSS = u("""
 
 
 AUTHOR_WORKS_SPARQL_QUERY = """
+PREFIX bd: <http://www.bigdata.com/rdf#>
 SELECT ?work ?workLabel ?date (?published_in AS ?description)
 WITH {{
   SELECT
@@ -90,6 +91,7 @@ ORDER BY DESC(?date)
 """
 
 VENUE_SPARQL_QUERY = """
+PREFIX bd: <http://www.bigdata.com/rdf#>
 SELECT ?work ?workLabel ?date (?author AS ?description)
 WITH {{
   SELECT
@@ -117,6 +119,7 @@ ORDER BY DESC(?date)
 """
 
 TOPIC_SPARQL_QUERY = """
+PREFIX bd: <http://www.bigdata.com/rdf#>
 SELECT ?work ?workLabel ?date (?author AS ?description)
 WITH {{
   SELECT
@@ -146,6 +149,7 @@ ORDER BY DESC(?date)
 """
 
 ORGANIZATION_SPARQL_QUERY = """
+PREFIX bd: <http://www.bigdata.com/rdf#>
 SELECT ?work ?workLabel ?date (?author AS ?description)
 WITH {{
   SELECT
@@ -174,6 +178,7 @@ ORDER BY DESC(?date)
 """
 
 ORGANIZATION_SPARQL_QUERY = """
+PREFIX bd: <http://www.bigdata.com/rdf#>
 SELECT ?work ?workLabel ?date (?author AS ?description)
 WITH {{
   SELECT
